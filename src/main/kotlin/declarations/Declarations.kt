@@ -3,7 +3,23 @@ package declarations
 typealias EmployeeSet = Set<Employee>
 
 fun main(args: Array<String>) {
-    learCast()
+    learnStringManipulation()
+}
+
+fun learnStringManipulation() {
+    val employeeOne = Employee("Pedro", 1)
+
+    println(employeeOne) //"Employee(id=$id, name=$name)"
+
+    val change = 4.22
+    println(" to show the value of change, we use \$change is $$change")
+
+    val numerator = 10.99
+    val denominator = 20.00
+
+    println("the valor of $numerator divided by $denominator is ${numerator/denominator}")
+
+    println("the employee's id is ${employeeOne.id}")
 }
 
 fun learCast() {
@@ -86,12 +102,7 @@ fun learnBasicDeclarations() {
 }
 
 class Employee(var name: String, var id: Int) {
-
-    override fun equals(obj: Any?): Boolean {
-        if (obj is Employee) {
-            return name == obj.name && id == obj.id
-        }
-
-        return false
+    override fun toString(): String {
+        return "Employee(id=$id, name=$name)"
     }
 }
